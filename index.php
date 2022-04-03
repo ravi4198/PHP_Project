@@ -15,7 +15,7 @@
         <form  method="post">
             <input class="form-control" type="number" name="num1" placeholder="Number 1" required="required">
             <input class="form-control" type="number" name="num2" placeholder="Number 2" required="required">
-            <select>
+            <select name="operator">
                 <option>None</option>
                 <option>Add</option>
                 <option>Subtract</option>
@@ -25,6 +25,7 @@
             <br>
             <button class="btn btn-primary mb-3 mt-3" type="submit" name="submit" value="submit">Calculate</button>
         </form>
+        <p>The answer is:</p>
     </div>
 
 
@@ -32,7 +33,7 @@
   if (isset($_POST['submit'])) {
      $result1 = $_POST['num1'];
      $result2 = $_POST['num2'];
-     $result3 = $_POST['operator'];
+     $operator = $_POST['operator'];
      switch ($operator) {
          case 'None':
              echo "You need to select a operator!";
